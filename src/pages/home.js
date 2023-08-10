@@ -59,7 +59,7 @@ function SearchBar() {
 				// const {data} = await axios.get(
 				//   `https://dummyjson.com/products/search?q=${value}`
 				// );
-				// 
+
 				const { data } = await axios.post(
 					`/api/findname`,
 					{ partial_name: value, limit: 5 }

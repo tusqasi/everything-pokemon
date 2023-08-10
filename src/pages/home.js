@@ -10,28 +10,26 @@ const keys = ['name',];
 function Result(props) {
 
 	return (
-		<div className=' w-full p-3 flex flex-col items-center '>
+		<div className=' w-full p-3 flex flex-col  '>
 			{keys.map((key) => {
-				// __AUTO_GENERATED_PRINT_VAR_START__
-				console.log("Result#(anon) props:");
-				console.log(props); // __AUTO_GENERATED_PRINT_VAR_END__
 				return (
-					<div className=''>
+					<div>
+					<span class={` scale-150 pokesprite pokemon ${props.name.toLowerCase()}`}></span>
 						<table>
 							<tr>
 								<td>
-									<div className=''>Name: </div>
+									<div>Name: </div>
 								</td>
 								<td>
-									<div className=''> {props.name}</div>
+									<div> {props.name}</div>
 								</td>
 							</tr>
 							<tr>
 								<td>
-									<div className=''>Type 1: </div>
+									<div>Type 1: </div>
 								</td>
 								<td>
-									<div className=''> {capitalizeFirstLetter(props.type1)}</div>
+									<div> {capitalizeFirstLetter(props.type1)}</div>
 								</td>
 							</tr>
 

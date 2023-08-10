@@ -1,4 +1,5 @@
 import '@/styles/globals.css'
+import '@/styles/pokesprite-pokemon-gen8.css'
 import { SessionProvider } from "next-auth/react"
 import Layout from "./layout";
 

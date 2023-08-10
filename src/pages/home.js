@@ -1,6 +1,6 @@
 import { useEffect, useState } from 'react';
 import axios from 'axios';
-import { useSession, signIn, signOut } from "next-auth/react"
+// import { useSession, signIn, signOut } from "next-auth/react"
 function capitalizeFirstLetter(string) {
 	return string.charAt(0).toUpperCase() + string.slice(1);
 }
@@ -10,11 +10,11 @@ const keys = ['name',];
 function Result(props) {
 
 	return (
-		<div className=' w-full p-3 flex flex-col  '>
+		<div className=' w-full p-3 flex flex-col '>
 			{keys.map((key) => {
 				return (
-					<div>
-					<span class={` scale-150 pokesprite pokemon ${props.name.toLowerCase()}`}></span>
+					<div className='lg:flex'>
+					<span class={` -translate-y-5 scale-150 pokesprite pokemon ${props.name.toLowerCase()}`}></span>
 						<table>
 							<tr>
 								<td>
@@ -88,7 +88,7 @@ function SearchBar() {
 							}, 200);
 						}}
 						type="text"
-						className="p-3 mb-1 w-60 bg-slate-100 rounded border-solid border-3 border-black focus:bg-white"
+						className="p-3 mb-1 lg:w-60 w-32 bg-slate-100 rounded border-solid border-3 border-black focus:bg-white"
 						placeholder="Search data..."
 						value={value}
 						onChange={(e) => {
@@ -111,7 +111,8 @@ function SearchBar() {
 						)) : "sf"}
 					</div>
 				</div>
-				<div className='ml-4 h-max border-solid border-2 border-indigo-400 rounded w-60  '>
+				<div className='ml-4 h-max border-solid border-2 border-indigo-400 rounded lg:w-60 w-44 
+							    bg-slate-100 text-slate-500 hover:text-black '>
 					{result ? <Result {...result} /> :
 
 
@@ -126,7 +127,9 @@ function SearchBar() {
 }
 
 function Home() {
-	const { data: session } = useSession();
+	// const { data: session } = useSession();
+	// mocked session
+	const session = {user: {image:"https://images.genius.com/a3c775785c08bb746278232194792f6d.750x750x1.jpg"}};
 
 	if (session) {
 		return (

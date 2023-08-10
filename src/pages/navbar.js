@@ -1,5 +1,5 @@
 import Image from 'next/image'
-import { useSession, signIn, signOut } from "next-auth/react"
+// import { useSession, signIn, signOut } from "next-auth/react"
 import localFont from 'next/font/local'
 import Link from "next/link";
 import React from "react";
@@ -11,7 +11,11 @@ const myFont = localFont({
 })
 
 export default function Navbar() {
-	const { data: session } = useSession()
+	// const { data: session } = useSession()
+	//
+	// mocked session
+	const session = {user: {image:"https://images.genius.com/a3c775785c08bb746278232194792f6d.750x750x1.jpg"}};
+
 
 	return (
 		<>
@@ -27,10 +31,10 @@ export default function Navbar() {
 
 					</div>
 					<div className=' flex flex-col justify-center '>
-						<a className={" text-4xl font-extrabold  " + " " + myFont.className}>Everything Pokemon</a>
+						<a className={" text-2xl lg:text-4xl font-extrabold  " + " " + myFont.className}>Everything Pokemon</a>
 					</div>
 				</div>
-				<div className="flex flex-col justify-center mr-20 text-2xl">
+				<div className="flex flex-col justify-center mr-20 lg:text-2xl ">
 					<div className='flex'>
 						<ul className="flex w-max h-max">
 							<li className='w-max p-2'>
@@ -40,7 +44,7 @@ export default function Navbar() {
 								<Link href="/about">About</Link>
 							</li>
 						</ul>
-						<div className=' ml-10'>
+						<div className='ml-1 lg:ml-10'>
 							{
 
 								session ?

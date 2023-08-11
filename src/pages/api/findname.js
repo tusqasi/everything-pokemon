@@ -8,7 +8,7 @@ export default async function handler(req, res) {
 	if (!db) {
 		// If the database instance is not initialized, open the database connection
 		db = await open({
-			filename: "./public/poke.db", // Specify the database file path
+			filename: "./public/static/poke.db", // Specify the database file path
 			driver: sqlite3.Database, // Specify the database driver (sqlite3 in this case),
 		});
 	}
